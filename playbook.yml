@@ -1,0 +1,11 @@
+---
+- hosts: apps_flexera
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+  roles:
+    - role: ansible-apps_flexera
+  environment:
+    http_proxy: "{{ http_proxy }}"
+    https_proxy: "{{ https_proxy }}"
+    no_proxy: "{{ no_proxy }}
